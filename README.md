@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ja">
 
-<head>
-# -ProgrammingSpace-
+<body>
+
 <button class="newProject" onclick="location.href='ファイル画面.html'">
     　ファイル
 </button>
