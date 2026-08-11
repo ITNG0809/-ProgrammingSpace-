@@ -1,2 +1,4 @@
 # -ProgrammingSpace-
-<link rel="stylesheet" href="ファイル画面.css">
+<button class="newProject" onclick="location.href='ファイル画面.html'">
+    　ファイル
+</button>
