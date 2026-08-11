@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+    <!-- =========================
+         基本設定
+    ========================= -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>新しいプロジェクト - ProgrammingSpace</title>
+
+    <link rel="stylesheet" href="新しいプロジェクト作成画面.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         上部ヘッダー
+    ========================= -->
+
+    <header class="createHeader">
+
+        <h1>ProgrammingSpace</h1>
+
+    </header>
+
+
+    <!-- =========================
+         プロジェクト作成画面
+    ========================= -->
+
+    <main class="createPage">
+
+        <div class="createBox">
+
+
+            <!-- =====================
+                 タイトル
+            ====================== -->
+
+            <h2>新しいプロジェクト</h2>
+
+            <p class="description">
+                新しいProgrammingSpaceプロジェクトを作成します。
+            </p>
+
+
+            <hr>
+
+
+            <!-- =====================
+                 設定 ＋ プレビュー
+            ====================== -->
+
+            <div class="createTop">
+
+
+                <!-- =================
+                     左：プロジェクト設定
+                ================== -->
+
+                <section class="projectSettings">
+
+                    <h3>プロジェクト設定</h3>
+
+
+                    <!-- プロジェクト名 -->
+
+                    <label for="projectName">
+                        プロジェクト名
+                    </label>
+
+                    <input
+                        type="text"
+                        id="projectName"
+                        value="Untitled"
+                    >
+
+
+                    <!-- ステージサイズ -->
+
+                    <label>
+                        ステージサイズ
+                    </label>
+
+                    <div class="sizeBox">
+
+                        <input
+                            type="number"
+                            id="width"
+                            value="480"
+                        >
+
+                        <span>×</span>
+
+                        <input
+                            type="number"
+                            id="height"
+                            value="360"
+                        >
+
+                    </div>
+
+                    <small>
+                        Scratch互換サイズ
+                    </small>
+
+
+                    <!-- テンプレート -->
+
+                    <label for="template">
+                        テンプレート
+                    </label>
+
+                    <select id="template">
+
+                        <option value="blank">
+                            空のプロジェクト
+                        </option>
+
+                        <option value="pen">
+                            ペンプロジェクト
+                        </option>
+
+                        <option value="game">
+                            ゲーム
+                        </option>
+
+                        <option value="animation">
+                            アニメーション
+                        </option>
+
+                    </select>
+
+
+                    <!-- Scratch互換モード -->
+
+                    <label class="checkboxLabel">
+
+                        <input
+                            type="checkbox"
+                            checked
+                        >
+
+                        Scratch互換モード
+
+                    </label>
+
+                </section>
+
+
+                <!-- =================
+                     右：プレビュー
+                ================== -->
+
+                <section id="previewBox">
+
+                    <h3>プレビュー</h3>
+
+
+                    <!-- プレビュー画像＋情報 -->
+
+                    <div class="previewContent">
+
+
+                        <!-- プレビュー画像 -->
+
+                        <div id="previewArea">
+
+                            <img
+                                id="previewImage"
+                                class="previewImage"
+                                src=""
+                                alt="プレビュー画像"
+                            >
+
+                            <span id="previewEmpty">
+                                プレビュー
+                            </span>
+
+                        </div>
+
+
+                        <!-- プレビュー情報 -->
+
+                        <div class="previewDetails">
+
+                            <p>
+
+                                <b>ファイル名</b>
+
+                                <span id="fileName">
+                                    未選択
+                                </span>
+
+                            </p>
+
+
+                            <p>
+
+                                <b>画像サイズ</b>
+
+                                <span id="imageSize">
+                                    ---
+                                </span>
+
+                            </p>
+
+
+                            <p>
+
+                                <b>形式</b>
+
+                                <span id="imageType">
+                                    ---
+                                </span>
+
+                            </p>
+
+
+                            <!-- プレビュー背景 -->
+
+                            <div class="previewBackground">
+
+                                <label for="previewBackground">
+                                    プレビュー背景
+                                </label>
+
+                                <select id="previewBackground">
+
+                                    <option value="checker">
+                                        市松模様
+                                    </option>
+
+                                    <option value="white">
+                                        白
+                                    </option>
+
+                                    <option value="black">
+                                        黒
+                                    </option>
+
+                                    <option value="gray">
+                                        グレー
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =================
+                         画像から作成
+                    ================== -->
+
+                    <div class="imageSection">
+
+                        <h3>画像から作成</h3>
+
+                        <div class="uploadButtons">
+
+                            <button
+                                onclick="document.getElementById('pngFile').click()"
+                            >
+                                PNG画像
+                            </button>
+
+                            <button
+                                onclick="document.getElementById('svgFile').click()"
+                            >
+                                SVG画像
+                            </button>
+
+                            <button
+                                onclick="document.getElementById('sheetFile').click()"
+                            >
+                                スプライトシート
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+
+            <hr>
+
+
+            <!-- =====================
+                 初期スプライト
+            ====================== -->
+
+            <section class="spriteSection">
+
+                <label for="sprite">
+                    初期スプライト
+                </label>
+
+                <select id="sprite">
+
+                    <option value="none">
+                        なし
+                    </option>
+
+                    <option value="cat">
+                        ProgrammingSpace Cat
+                    </option>
+
+                    <option value="circle">
+                        円
+                    </option>
+
+                    <option value="square">
+                        四角
+                    </option>
+
+                </select>
+
+            </section>
+
+
+            <!-- =====================
+                 作成ボタン
+            ====================== -->
+
+            <div class="createButtons">
+
+                <button
+                    onclick="history.back()"
+                    class="cancel"
+                >
+                    キャンセル
+                </button>
+
+                <button
+                    class="create"
+                    onclick="createProject()"
+                >
+                    作成
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         ファイル入力
+    ========================= -->
+
+    <input
+        id="pngFile"
+        type="file"
+        accept=".png,image/png"
+        hidden
+    >
+
+    <input
+        id="svgFile"
+        type="file"
+        accept=".svg,image/svg+xml"
+        hidden
+    >
+
+    <input
+        id="sheetFile"
+        type="file"
+        accept=".png,image/png"
+        hidden
+    >
+
+
+    <!-- =========================
+         JS
+    ========================= -->
+
+    <script src="新しいプロジェクト作成画面.js"></script>
+
+</body>
+
+</html>

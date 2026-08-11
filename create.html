@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+    <!-- =========================
+         基本設定
+    ========================= -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>新しいプロジェクト - ProgrammingSpace</title>
+
+<link rel="icon" type="image/webp+xml" href="icon.webp">
+    <!-- =========================
+         CSS
+    ========================= -->
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         上部ヘッダー
+    ========================= -->
+
+    <header>
+
+        <h1>
+            ProgrammingSpace
+        </h1>
+
+    </header>
+
+
+    <!-- =========================
+         プロジェクト作成画面
+    ========================= -->
+
+    <main class="createPage">
+
+        <div class="createBox">
+
+
+            <!-- =====================
+                 タイトル
+            ====================== -->
+
+            <h2>
+                新しいプロジェクト
+            </h2>
+
+            <p class="description">
+                新しいProgrammingSpaceプロジェクトを作成します。
+            </p>
+
+            <hr>
+
+
+            <!-- =====================
+                 プロジェクト名
+            ====================== -->
+
+            <label>
+                プロジェクト名
+            </label>
+
+            <input
+                type="text"
+                id="projectName"
+                value="Untitled"
+            >
+
+
+            <br><br>
+
+
+            <!-- =====================
+                 ステージサイズ
+            ====================== -->
+
+            <label>
+                ステージサイズ
+            </label>
+
+            <div class="sizeBox">
+
+                <input
+                    type="number"
+                    id="width"
+                    value="480"
+                >
+
+                <span>×</span>
+
+                <input
+                    type="number"
+                    id="height"
+                    value="360"
+                >
+
+            </div>
+
+            <small>
+                Scratch互換サイズ
+            </small>
+
+
+            <br><br>
+
+
+            <!-- =====================
+                 テンプレート
+            ====================== -->
+
+            <label>
+                テンプレート
+            </label>
+
+            <select id="template">
+
+                <option value="blank">
+                    空のプロジェクト
+                </option>
+
+                <option value="pen">
+                    ペンプロジェクト
+                </option>
+
+                <option value="game">
+                    ゲーム
+                </option>
+
+                <option value="animation">
+                    アニメーション
+                </option>
+
+            </select>
+
+
+            <br><br>
+
+
+            <!-- =====================
+                 Scratch互換モード
+            ====================== -->
+
+            <label>
+
+                <input
+                    type="checkbox"
+                    checked
+                >
+
+                Scratch互換モード
+
+            </label>
+
+
+            <br><br><br>
+
+
+            <!-- =====================
+                 ボタン
+            ====================== -->
+
+            <div class="buttons">
+
+                <!-- キャンセル -->
+
+                <button
+                    onclick="history.back()"
+                    class="cancel"
+                >
+                    キャンセル
+                </button>
+
+
+                <!-- 作成 -->
+
+                <button
+                    type="button"
+                    onclick="createProject()"
+                >
+                    作成
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         プロジェクト作成処理
+    ========================= -->
+
+    <script>
+
+        function createProject() {
+
+            const project = {
+
+                name:
+                    document.getElementById("projectName").value,
+
+                width:
+                    Number(
+                        document.getElementById("width").value
+                    ),
+
+                height:
+                    Number(
+                        document.getElementById("height").value
+                    ),
+
+                template:
+                    document.getElementById("template").value
+
+            };
+
+
+            // =====================
+            // プロジェクトを保存
+            // =====================
+
+            localStorage.setItem(
+                "currentProject",
+                JSON.stringify(project)
+            );
+
+
+            // =====================
+            // 作成画面へ移動
+            // =====================
+
+            location.href = "editor.html";
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

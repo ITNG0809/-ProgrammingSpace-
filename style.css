@@ -1,0 +1,475 @@
+/* =========================
+   全体
+========================= */
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: #eef2ff;
+}
+
+/* =========================
+   ステージ上のスプライト
+========================= */
+
+#stage {
+    position: relative;
+}
+
+#player {
+    position: absolute;
+
+    width: 80px;
+
+    left: 0;
+    top: 0;
+
+    user-select: none;
+
+    /* マウス・タッチ両対応 */
+    touch-action: none;
+}
+/* =========================
+   上部メニューバー
+========================= */
+
+#topbar {
+    height: 40px;
+    background: #7b5cff;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 20px;
+
+    color: white;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#projectTitle {
+    font-size: 12px;
+    padding: 5px;
+}
+
+.menu {
+    margin-left: auto;
+}
+
+.menu button {
+    margin-left: 10px;
+}
+
+
+/* =========================
+   エディタ全体
+========================= */
+
+#editor {
+    display: flex;
+
+    height: calc(100vh - 60px);
+
+    overflow-x: auto;
+}
+
+
+/* =========================
+   左：ブロックパネル
+========================= */
+
+#blockPanel {
+    width: 350px;
+
+    background: white;
+
+    border-right: 1px solid #ccc;
+
+    display: flex;
+    flex-direction: column;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================
+   コード・コスチューム・音
+========================= */
+
+.tabBar {
+    display: flex;
+}
+
+.tabBar button {
+    flex: 1;
+    padding: 10px;
+}
+
+
+/* =========================
+   ブロック検索
+========================= */
+
+#blockSearch {
+    margin: 10px;
+    padding: 8px;
+}
+
+
+/* =========================
+   ブロックカテゴリ
+========================= */
+
+#category {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 5px;
+
+    padding: 10px;
+}
+
+
+/* =========================
+   ブロック一覧
+========================= */
+
+#blocks {
+    padding: 10px;
+
+    overflow: auto;
+}
+
+
+/* =========================
+   ブロック本体
+========================= */
+
+.block {
+    position: relative;
+
+    padding: 8px 12px;
+
+    background: #4C97FF;
+
+    border-radius: 10px;
+
+    user-select: none;
+}
+
+
+/* =========================
+   ブロック上部の接続部分
+========================= */
+
+.block::before {
+    content: "";
+
+    position: absolute;
+
+    top: -6px;
+    left: 12px;
+
+    width: 20px;
+    height: 6px;
+
+    border-radius: 5px 5px 0 0;
+}
+
+
+/* =========================
+   動きカテゴリ
+========================= */
+
+.motion {
+    background: #4c97ff;
+}
+
+
+/* =========================
+   中央：Workspace
+========================= */
+
+#workspace {
+    flex: 1;
+
+    min-width: 0;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: #fafafa;
+
+    border-right: 1px solid #ccc;
+}
+
+
+/* =========================
+   Workspace内のブロック
+========================= */
+
+.workspaceBlock {
+    position: absolute;
+
+    cursor: grab;
+
+    touch-action: none;
+
+    user-select: none;
+
+    z-index: 100;
+}
+
+
+/* =========================
+   タッチ操作
+========================= */
+
+#blocks .block,
+#workspace .workspaceBlock {
+    touch-action: none;
+}
+
+
+/* =========================
+   右：ステージパネル
+========================= */
+
+#stagePanel {
+    width: 320px;
+
+    background: #f5f5f5;
+
+    display: flex;
+    flex-direction: column;
+
+    flex-shrink: 0;
+
+    border-left: 1px solid #ccc;
+}
+
+
+/* =========================
+   ステージ操作ボタン
+========================= */
+
+#stageControls {
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    padding-left: 8px;
+
+    background: #f5f5f5;
+
+    box-sizing: border-box;
+}
+
+
+/* ボタンそのもの */
+
+#stageControls button {
+    width: 30px;
+    height: 30px;
+
+    padding: 2px;
+
+    border: 1px solid #999;
+    border-radius: 4px;
+
+    background: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+
+/* ボタンの画像 */
+
+#stageControls button img {
+    width: 22px;
+    height: 22px;
+
+    display: block;
+
+    pointer-events: none;
+}
+
+
+/* 押したとき */
+
+#stageControls button:active {
+    transform: scale(0.90);
+}
+
+
+/* =========================
+   ステージ
+========================= */
+
+#stage {
+    position: relative;
+
+    width: 280px;
+    height: 210px;
+
+    margin: 0 auto;
+
+    background: white;
+
+    border: 1px solid #999;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   ステージ上のスプライト
+========================= */
+
+.playerSprite {
+    position: absolute;
+
+    width: 80px;
+
+    left: 0;
+    top: 0;
+
+    display: block;
+
+    user-select: none;
+
+    touch-action: none;
+
+    image-rendering: pixelated;
+}
+/* =========================
+   ドット絵をくっきり表示
+========================= */
+
+#player {
+    position: absolute;
+
+    width: 80px;
+
+    left: 0;
+    top: 0;
+
+    display: block;
+
+    image-rendering: pixelated;
+}
+/* =========================
+   スプライト一覧
+========================= */
+
+#spriteList {
+    margin: 20px;
+
+    height: 120px;
+
+    background: white;
+
+    border: 1px solid #ccc;
+
+    padding: 10px;
+
+    box-sizing: border-box;
+}
+/* =========================
+   スプライト一覧
+========================= */
+
+#spriteList {
+    margin: 20px;
+
+    height: 120px;
+
+    border: 1px solid #ccc;
+
+    padding: 10px;
+}
+
+
+/* =========================
+   プレビュー
+========================= */
+
+#previewBox {
+    margin-top: 30px;
+
+    width: 320px;
+
+    background: white;
+
+    border: 1px solid #cccccc;
+
+    border-radius: 10px;
+
+    padding: 20px;
+}
+
+
+/* =========================
+   プレビューエリア
+========================= */
+
+#previewArea {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 250px;
+    height: 250px;
+
+    background:
+        repeating-conic-gradient(
+            #ddd 0% 25%,
+            white 0% 50%
+        )
+        0 0 / 20px 20px;
+}
+
+
+/* =========================
+   プレビュー画像
+========================= */
+
+.previewImage {
+    display: none;
+
+    max-width: 220px;
+    max-height: 220px;
+
+    border: 1px solid #cccccc;
+
+    border-radius: 8px;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   プレビュー情報
+========================= */
+
+.previewInfo p {
+    margin: 6px 0;
+
+    font-size: 15px;
+}

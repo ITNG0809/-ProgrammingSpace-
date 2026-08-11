@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+
+<!-- =========================
+     CSS
+========================= -->
+
+<link rel="stylesheet" href="ファイル画面.css">
+
+
+<title>ProgrammingSpace</title>
+
+<link rel="icon" type="image/webp+xml" href="icon.webp">
+<!-- =========================
+     上部バー
+========================= -->
+
+<header>
+
+    <!-- ロゴ -->
+    <div class="logo">
+        <h1>ProgrammingSpace</h1>
+    </div>
+
+
+    <!-- プロジェクト検索 -->
+    <div class="search">
+
+        <input
+            type="text"
+            placeholder="プロジェクトを検索"
+        >
+
+    </div>
+
+
+    <!-- 右側ボタン -->
+    <div class="buttons">
+
+        <button>⚙</button>
+        <button>👤</button>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     メイン画面
+========================= -->
+
+<main>
+
+
+    <!-- =====================
+         左：サイドバー
+    ====================== -->
+
+    <aside>
+
+        <!-- 新しいプロジェクト -->
+        <button
+            class="newProject"
+            onclick="location.href='新しいプロジェクト作成画面.html'"
+        >
+            ＋ 新しいプロジェクト
+        </button>
+
+
+        <!-- フォルダー -->
+        <button>
+            📁 フォルダー
+        </button>
+
+
+        <!-- お気に入り -->
+        <button>
+            ⭐ お気に入り
+        </button>
+
+
+        <!-- ごみ箱 -->
+        <button>
+            🗑 ごみ箱
+        </button>
+
+    </aside>
+
+
+    <!-- =====================
+         右：プロジェクト一覧
+    ====================== -->
+
+    <section>
+
+        <h2>
+            最近のプロジェクト
+        </h2>
+
+
+        <!-- プロジェクトカード -->
+
+        <div class="projects">
+
+
+            <!-- Sans Battle -->
+
+            <div class="project">
+
+                <div class="thumbnail"></div>
+
+                <h3>Sans Battle</h3>
+
+                <p>昨日</p>
+
+            </div>
+
+
+            <!-- Pen Test -->
+
+            <div class="project">
+
+                <div class="thumbnail"></div>
+
+                <h3>Pen Test</h3>
+
+                <p>3日前</p>
+
+            </div>
+
+
+            <!-- Animation -->
+
+            <div class="project">
+
+                <div class="thumbnail"></div>
+
+                <h3>Animation</h3>
+
+                <p>6日前</p>
+
+            </div>
+
+
+            <!-- Platform -->
+
+            <div class="project">
+
+                <div class="thumbnail"></div>
+
+                <h3>Platform</h3>
+
+                <p>7日前</p>
+
+            </div>
+
+
+            <!-- Untitled -->
+
+            <div class="project">
+
+                <div class="thumbnail"></div>
+
+                <h3>Untitled</h3>
+
+                <p>1週間前</p>
+
+            </div>
+
+
+            <!-- Drawing -->
+
+            <div class="project">
+
+                <div class="thumbnail"></div>
+
+                <h3>Drawing</h3>
+
+                <p>2週間前</p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+</main>
+
+
+    <!-- =========================
+         JS
+    ========================= -->
+
+    <script src="新しいプロジェクト作成画面.js"></script>
+
+</body>
+
+</html>

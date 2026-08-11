@@ -1,0 +1,247 @@
+/* =========================
+   ファイル画面
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: #eef2ff;
+    color: #222;
+}
+
+
+/* =========================
+   上バー
+========================= */
+
+header {
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 25px;
+
+    background: #7b5cff;
+    color: white;
+
+    gap: 25px;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 22px;
+}
+
+
+/* =========================
+   検索
+========================= */
+
+.search {
+    flex: 1;
+    max-width: 500px;
+}
+
+.search input {
+    width: 100%;
+
+    padding: 9px 14px;
+
+    border: none;
+    border-radius: 7px;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   上バーのボタン
+========================= */
+
+.buttons {
+    margin-left: auto;
+
+    display: flex;
+    gap: 8px;
+}
+
+.buttons button {
+    width: 38px;
+    height: 38px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: white;
+
+    cursor: pointer;
+
+    font-size: 18px;
+}
+
+.buttons button:hover {
+    background: #f0f0f0;
+}
+
+
+/* =========================
+   メイン
+========================= */
+
+main {
+    display: flex;
+
+    min-height: calc(100vh - 60px);
+}
+
+
+/* =========================
+   左メニュー
+========================= */
+
+main > aside {
+    width: 220px;
+
+    padding: 20px;
+
+    background: white;
+
+    border-right: 1px solid #ddd;
+}
+
+main > aside button {
+    width: 100%;
+
+    padding: 11px;
+
+    margin-bottom: 8px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: white;
+
+    text-align: left;
+
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+main > aside button:hover {
+    background: #eeeeff;
+}
+
+
+/* 新規プロジェクト */
+
+main > aside .newProject {
+    background: #7b5cff;
+    color: white;
+
+    font-weight: bold;
+}
+
+main > aside .newProject:hover {
+    background: #6849e8;
+}
+
+
+/* =========================
+   プロジェクトエリア
+========================= */
+
+main > section {
+    flex: 1;
+
+    padding: 30px;
+}
+
+main > section h2 {
+    margin-top: 0;
+}
+
+
+/* =========================
+   プロジェクト一覧
+========================= */
+
+.projects {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fill, minmax(190px, 1fr));
+
+    gap: 20px;
+
+    max-width: 1100px;
+}
+
+
+/* =========================
+   プロジェクトカード
+========================= */
+
+.project {
+    background: white;
+
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+    padding: 12px;
+
+    cursor: pointer;
+
+    transition: transform 0.1s;
+}
+
+.project:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   サムネイル
+========================= */
+
+.thumbnail {
+    width: 100%;
+    height: 120px;
+
+    margin-bottom: 10px;
+
+    border-radius: 7px;
+
+    background:
+        repeating-conic-gradient(
+            #ddd 0% 25%,
+            white 0% 50%
+        )
+        0 0 / 20px 20px;
+
+    border: 1px solid #ddd;
+}
+
+
+/* =========================
+   プロジェクト名
+========================= */
+
+.project h3 {
+    margin: 5px 0;
+
+    font-size: 16px;
+}
+
+.project p {
+    margin: 0;
+
+    color: #777;
+
+    font-size: 12px;
+}

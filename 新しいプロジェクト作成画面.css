@@ -1,0 +1,395 @@
+/* =========================
+   作成画面
+========================= */
+
+.createHeader {
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 25px;
+
+    background: #7b5cff;
+
+    color: white;
+}
+
+.createHeader h1 {
+    margin: 0;
+
+    font-size: 22px;
+}
+
+
+/* =========================
+   作成ページ
+========================= */
+
+.createPage {
+    display: flex;
+    justify-content: center;
+
+    padding: 35px 20px;
+}
+
+
+/* =========================
+   作成ボックス
+========================= */
+
+.createBox {
+    width: 900px;
+
+    background: white;
+
+    border: 1px solid #ccc;
+    border-radius: 12px;
+
+    padding: 30px;
+
+    box-sizing: border-box;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.createBox hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 22px 0;
+}
+
+/* =========================
+   設定＋プレビュー
+========================= */
+
+.createTop {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+/* =========================
+   プロジェクト設定
+========================= */
+
+.projectSettings {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #fafafa;
+}
+.projectSettings h3 {
+    margin-top: 0;
+}
+
+
+/* =========================
+   入力欄
+========================= */
+
+#projectName,
+#template,
+#sprite {
+    width: 100%;
+
+    padding: 9px;
+
+    border: 1px solid #bbb;
+    border-radius: 6px;
+
+    box-sizing: border-box;
+
+    font-size: 14px;
+
+    background: white;
+}
+
+
+/* =========================
+   ステージサイズ
+========================= */
+
+.sizeBox {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+.sizeBox input {
+    width: 100px;
+
+    padding: 8px;
+
+    border: 1px solid #bbb;
+    border-radius: 6px;
+}
+
+.sizeBox span {
+    font-weight: bold;
+}
+
+.projectSettings small {
+    color: #777;
+}
+
+
+/* =========================
+   Scratch互換モード
+========================= */
+
+.checkboxLabel {
+    display: flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    margin-top: 8px;
+}
+
+
+/* =========================
+   プレビュー
+========================= */
+
+#previewBox {
+    padding: 20px;
+
+    border: 1px solid #ddd;
+    border-radius: 10px;
+
+    background: #fafafa;
+}
+
+#previewBox h3 {
+    margin-top: 0;
+}
+
+
+/* =========================
+   プレビュー画像＋情報
+========================= */
+
+.previewContent {
+    display: flex;
+
+    flex-direction: row;
+
+    gap: 20px;
+
+    align-items: flex-start;
+}
+/* =========================
+   プレビューエリア
+========================= */
+
+#previewArea {
+    width: 250px;
+    height: 210px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid #ccc;
+
+    overflow: hidden;
+
+    background:
+        repeating-conic-gradient(
+            #ddd 0% 25%,
+            white 0% 50%
+        )
+        0 0 / 20px 20px;
+}
+
+
+/* =========================
+   プレビュー画像
+========================= */
+
+.previewImage {
+    display: none;
+
+    max-width: 90%;
+    max-height: 90%;
+
+    image-rendering: pixelated;
+}
+
+/* =========================
+   プレビュー未選択
+========================= */
+
+#previewEmpty {
+    color: #888;
+}
+
+
+/* =========================
+   プレビュー情報
+========================= */
+
+.previewDetails {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.previewDetails p {
+    margin: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.previewDetails p b {
+    font-size: 13px;
+
+    color: #555;
+}
+
+.previewDetails p span {
+    word-break: break-all;
+}
+
+
+/* =========================
+   プレビュー背景
+========================= */
+
+.previewBackground {
+    display: flex;
+    flex-direction: column;
+
+    gap: 5px;
+
+    margin-top: 5px;
+}
+
+.previewBackground select {
+    padding: 7px;
+
+    border: 1px solid #bbb;
+    border-radius: 6px;
+}
+
+
+/* =========================
+   初期スプライト
+========================= */
+
+.spriteSection {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+.spriteSection label {
+    font-weight: bold;
+
+    white-space: nowrap;
+}
+
+.spriteSection #sprite {
+    width: 300px;
+}
+
+
+/* =========================
+   画像から作成
+========================= */
+
+.imageSection h3 {
+    margin-bottom: 12px;
+}
+
+.uploadButtons {
+    display: flex;
+
+    gap: 10px;
+}
+
+.uploadButtons button {
+    padding: 10px 18px;
+
+    border: 1px solid #bbb;
+    border-radius: 7px;
+
+    background: white;
+
+    cursor: pointer;
+}
+
+.uploadButtons button:hover {
+    background: #f2f2f2;
+}
+
+
+/* =========================
+   作成・キャンセル
+========================= */
+
+.createButtons {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+.createButtons button {
+    padding: 10px 25px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   キャンセル
+========================= */
+
+.createButtons .cancel {
+    border: 1px solid #bbb;
+
+    background: white;
+}
+
+
+/* =========================
+   作成
+========================= */
+
+.createButtons .create {
+    border: none;
+
+    background: #7b5cff;
+
+    color: white;
+}
+
+.createButtons .create:hover {
+    background: #6849e8;
+}

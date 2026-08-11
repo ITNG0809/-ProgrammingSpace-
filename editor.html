@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>ProgrammingSpace</title>
+
+<link rel="icon" type="image/webp+xml" href="icon.webp">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header id="topbar">
+
+<div class="logo">
+プロスペ
+</div>
+
+<input
+id="projectTitle"
+value="Untitled"
+>
+
+<div class="menu">
+
+<button class="newProject" onclick="location.href='ファイル画面.html'">
+    　ファイル
+</button>
+
+<button>編集</button>
+
+<button>共有</button>
+
+</div>
+
+</header>
+
+
+
+<div id="editor">
+
+    <aside id="blockPanel">
+
+        <div class="tabBar">
+
+            <button>コード</button>
+
+            <button>コスチューム</button>
+
+            <button>音</button>
+
+        </div>
+
+        <input
+        placeholder="ブロック検索..."
+        id="blockSearch">
+
+        <div id="category">
+
+            <button>動き</button>
+
+            <button>見た目</button>
+
+            <button>音</button>
+
+            <button>イベント</button>
+
+            <button>制御</button>
+
+            <button>調べる</button>
+
+            <button>変数</button>
+
+        </div>
+
+        <div id="blocks">
+
+            <div class="block motion">
+                10歩動かす
+            </div>
+
+            <div class="block motion">
+                ○○へ行く
+            </div>
+
+            <div class="block motion">
+                x座標を○にする
+            </div>
+
+        </div>
+
+    </aside>
+
+<main id="workspace">
+
+</main>
+
+
+  <aside id="stagePanel">
+
+    <!-- =========================
+         ステージ操作ボタン
+    ========================= -->
+
+    <div id="stageControls">
+
+        <button id="startButton">
+            <img src="play.png" alt="開始">
+        </button>
+
+        <button id="stopButton">
+            <img src="stop.png" alt="停止">
+        </button>
+
+    </div>
+
+
+    <!-- =========================
+         ステージ
+    ========================= -->
+
+<div id="stage">
+</div>
+<!-- =========================
+     スプライト一覧
+========================= -->
+
+<div id="spriteList">
+
+    <div class="spriteItem">
+        Sprite1
+    </div>
+
+</div>
+
+<button id="addSpriteButton">
+    ＋ スプライトを追加
+</button>
+      
+<script src="editor.js"></script>
+
+</body>
+
+</html>
